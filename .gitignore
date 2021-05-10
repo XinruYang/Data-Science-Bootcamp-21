@@ -1,9 +1,10 @@
 
-
+#Si lo pongo entre ** si contiene eso en su nombre no se añade a git
+#Si no lo pongo entre asteriscos, ignora literalmente el archivo
 
 *PLANITICATION.md*
 *.sav*
-*password*
+*password* 
 
 *selenium_donot_work*
 others/resources/preparing_interview/technical_tests/*
