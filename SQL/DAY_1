@@ -1,0 +1,12 @@
+--NOS MUESTRA LAS CANCIONES DE CADA ARTISTA QUE EMPIEZA POR YOU
+SELECT Composer, COUNT(*)
+FROM tracks
+WHERE Name LIKE "You%"
+GROUP BY Composer
+
+--Nos muestra el nombre de la canción y el composer cuyas canciones empiezan por You
+SELECT Name,Composer
+FROM tracks
+WHERE Name LIKE "You%"
+
+--El porcentaje indica que empieza por eso, si lo ponemos al principio será que acabe en eso y si lo ponemos en el medio que esté en medio.
