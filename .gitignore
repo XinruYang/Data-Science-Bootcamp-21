@@ -6,6 +6,8 @@
 *.sav*
 *password* 
 
+*201906_Usage_Bicimad.json*
+
 *selenium_donot_work*
 others/resources/preparing_interview/technical_tests/*
 /week3*/day4*/examples*
