@@ -1,3 +1,5 @@
+
+
 import pandas as pd 
 from sklearn.datasets import load_iris, load_boston
 import seaborn as sns
@@ -5,10 +7,15 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 import dtale
+import sys, os
+
+dir = os.path.dirname
+print("path",sys.path)
 
 def lectura_data_inicial():
     # Leemos el DataFrame sobre el que vamos a trabajar
-    covid = pd.read_csv("../data/owid-covid-data.csv")
+    # covid = pd.read_csv(""../)
+    covid = pd.read_csv(dir(dir(dir(__file__))) + os.sep + "data" + os.sep + "owid-covid-data.csv")
 
     # Cambiamos el formato de la columna data a datetime
     covid['date'] = pd.to_datetime(covid['date'], format='%Y-%m-%d')
@@ -39,7 +46,9 @@ covid_data = filtrar_tabla()
 def lectura_data_pobreza(): 
 
     # Read csv --> df
-    pobreza = pd.read_csv("../data/Pobreza.csv", sep=";")
+    # pobreza = pd.read_csv("../data/Pobreza.csv", sep=";")
+
+    pobreza = pd.read_csv(dir(dir(dir(__file__))) + os.sep + "data" + os.sep + "Pobreza.csv", sep=";")
 
     # Split the icon from the values in column "country"
     pobreza["Country"] = pobreza["Country"].apply(lambda x: x[1:])

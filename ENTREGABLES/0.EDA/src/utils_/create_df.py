@@ -1,6 +1,7 @@
-# Function to create smaller and sorted df
+# Functions to create smaller and sorted df
 
 # ------ Import the necessary libraries ------
+
 import pandas as pd
 import numpy as np
 
@@ -47,7 +48,7 @@ def sort_value(continent, column): # Continent: continent, column: column to sor
 
 
 # Function to concatenate the sorted values of each continent by column ("gdp per capita")
-def concatenate_df(df1, df2, df3, df4, df5, column):
+def concatenate_df(df1, df2, df3, df4, df5, df6, column):
     gdp_mundo_sorted = pd.concat([df1, df2, df3, df4, df5], axis=0)
     
     # Sort values from the new dataset

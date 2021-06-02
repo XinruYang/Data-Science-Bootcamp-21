@@ -1,0 +1,12 @@
+{
+    "project name": "COVID - 19 DEATH TOLL VS. POVERTY: DETAILED ANALISYS" ,
+    "author" : "Xinru Yang", 
+    "linkedin": "url",
+    "e_mail": "xyang0911@gmail.com",
+    "project_title": "la cabecera de stramlit",
+    "project_description": "",
+    "flask_port": 8080, 
+    "streamlit_port": 8501,
+    "links": "",
+    "python_libraries_used": ["streamlit", "Flask", "pandas", "numpy", "json", "plotly", "seaborn", "os", "sys" ]
+}

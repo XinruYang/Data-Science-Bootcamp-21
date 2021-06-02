@@ -1,0 +1,1 @@
+Repositiorios --> cosa verde https: --> a la terminal de git, git clone y el enlace

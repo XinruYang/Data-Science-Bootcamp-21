@@ -12,5 +12,8 @@ def read(filepath):
     df = pd.read_csv(filepath)
     return df
 
+def create_excel(data, route):
+    return data.to_excel(route, index=False)
+
 
 
