@@ -1,7 +1,7 @@
 Machine Learning 
 
 1. Datos. Detectar el tipo de problema:
-    - Clasificación (LogisticRegression, SVC, Knn, Decission Tree, Random Forest Classificator,...)
+    - Clasificación (LogisticRegression, SVC, Knn, Decission Tree Clasificator, Random Forest Classificator,...)
     - Regresión ( Regresion Lineal, non-linear Polinómica, SVR, Decission Tree Regressor, Random Forest Regressor,...)
 
 2. EDA: Data Wrangling:

@@ -124,7 +124,7 @@ def scatter(df, x, y, size, title, color="continent", n=40 ):
 
 # BOX PLOT
 
-def boxplot(x,y,df, title):
+def boxplot(x,y,df, title): 
     fig = plt.figure(figsize=(20,10))
     sns.boxplot(x=x, y=y, data=df).set_title(title, fontsize=20)
 
