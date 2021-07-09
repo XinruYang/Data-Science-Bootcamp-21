@@ -5,9 +5,10 @@
 *PLANITICATION.md*
 *.sav*
 *password* 
-
+bd_info.json
 *201906_Usage_Bicimad.json*
 settings.json
+*.jpg*
 
 *selenium_donot_work*
 others/resources/preparing_interview/technical_tests/*
