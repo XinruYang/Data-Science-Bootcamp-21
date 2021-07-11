@@ -1,14 +1,72 @@
+# ------------------------------ Import the necessary libraries ------------------------------------
+
+import pandas as pd 
 import os, sys
 import pymysql
 import json
+from sqlalchemy import create_engine
+
+# ---------------------------------------------------------------------------------------------------
+
+# Create variables 
 
 dir = os.path.dirname
 path = os.path.abspath(__file__)
+
+# ---------------------------------------------------------------------------------------------------
+
+# Read bd_info.json
 
 def read_json(fullpath):
     with open(fullpath, "r") as json_file_readed:
         json_readed = json.load(json_file_readed)
     return json_readed 
+
+# ---------------------------------------------------------------------------------------------------
+
+# Asign DDBB settings, connect to mySQL and upload it
+
+def upload_sql(name, route, json_readed,x=True): # upload_sql("xinru_yang_wang"route, json_readed)
+    # Read the df that we want to upload
+    df = pd.read_csv(route)
+    if x == True:
+        df.drop("Image", axis=1, inplace=True)
+
+    # Asign DDBB settings 
+    IP_DNS = json_readed["IP_DNS"]
+    PORT = json_readed["PORT"]
+    USER = json_readed["USER"]
+    PASSWORD = json_readed["PASSWORD"]
+    BD_NAME = json_readed["BD_NAME"]
+
+    
+    engine = create_engine('mysql+pymysql://' + json_readed['USER'] +
+                     ':' + json_readed['PASSWORD'] + '@' + json_readed['IP_DNS'] 
+                     + ':' + str(json_readed['PORT'])+ '/' + json_readed['BD_NAME'])
+
+    df.to_sql(name, con = engine, if_exists = 'replace', index=False)
+
+# ---------------------------------------------------------------------------------------------------
+
+# Asign DDBB settings, connect to mySQL and select
+
+def select_sql(json_readed, mysql, name): 
+
+    IP_DNS = json_readed["IP_DNS"]
+    PORT = json_readed["PORT"]
+    USER = json_readed["USER"]
+    PASSWORD = json_readed["PASSWORD"]
+    BD_NAME = json_readed["BD_NAME"]
+
+    mysql = mysql(IP_DNS, USER, PASSWORD, BD_NAME, PORT)
+
+    db = mysql.connect()
+    df = pd.read_sql("select * from " + name, con=db)
+    return df
+
+
+
+# ---------------------------------------------------------------------------------------------------
 
 class MySQL:
 

@@ -23,7 +23,8 @@ import PIL.Image
 def read_folder(subset, folder, batch_size=32): 
 
     """ This function reads the images from the folders: it creates the training and the validation
-    set and resizes them to 180x180 """
+    set and resizes them to 180x180. x_train = the images, y_train = labels --> name of the folders """
+
     if folder == "train" or "new_train":
         batch_size = batch_size
         img_height = 180
@@ -73,8 +74,4 @@ def read_data(path): # dire = os.path.dirname(os.getcwd()) + os.sep + "data" + o
 
 # ---------------------------------------------------------------------------------------------------
 
-# This function saves our models in the folder that we choose 
-
-def save_model(model, route):
-    model.save(route)
 
